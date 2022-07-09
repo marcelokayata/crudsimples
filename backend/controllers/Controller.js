@@ -84,3 +84,17 @@ exports.delete_list = function(req, res) {
     res.json({ message: 'Task successfully deleted' });
   });
 };
+
+exports.create_restaurant = async (req, res) => {
+  const { name, location, cost } = req.body
+  try {
+    const { restaurantId } = await createRestaurant(name, location, cost)
+    res.json({
+      restaurantId
+    })
+  } catch (err) {
+    res.status(400).json({
+      message
+    })
+  }
+}

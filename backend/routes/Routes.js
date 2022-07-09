@@ -1,6 +1,7 @@
 'use strict';
 module.exports = function(app) {
-  var todoList = require('../controllers/Controller');
+  const todoList = require('../controllers/Controller');
+  const createRestaurant = require('../controllers/createRestaurant');
 
   // todoList Routes
   app.route('/tasks')
@@ -11,5 +12,8 @@ module.exports = function(app) {
 
   app.route('/tasksfind')
     .post(todoList.list_find)
+  
+  app.route('/restaurant')
+  .post(todoList.create_restaurant)
     
 };

@@ -7,6 +7,9 @@ let TaskSchema = new Schema({
   name: {
     type: String,
   },
+  cargo: {
+    type: String,
+  },
   nome: {
     type: String,
   },

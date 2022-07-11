@@ -44,7 +44,9 @@ exports.update_a_task = function(req, res) {
 };
 
 exports.update_any = function(req, res) {
-  Task.findOneAndUpdate(req.body, req.body, {new: true}, function(err, task) {
+  const filter = req.body[0]
+  const update = req.body[1]
+  Task.findOneAndUpdate(filter, update, {new: true}, function(err, task) {
     if (err)
       res.send(err);
     res.json(task);

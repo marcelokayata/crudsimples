@@ -7,13 +7,15 @@ function getAllData(setDataTask) {
         console.log("dados: ", response.data)
       });
   }
-function postFilterData(nomeData) {
-
+function postFilterData(nomeData, setGetResponse) {
+  console.log("inside filter: ", nomeData)
     axios.post(`${baseURL2}/tasksfind`, {
-        nome: nomeData
+        
+        nome: nomeData.name
       })
       .then(function (response) {
-        console.log(response);
+        console.log("inside filter2: ", response.data)
+        setGetResponse(response.data)
       })
       .catch(function (error) {
         console.log(error);

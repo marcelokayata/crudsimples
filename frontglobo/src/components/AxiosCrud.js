@@ -11,7 +11,8 @@ function postFilterData(nomeData, setGetResponse) {
   console.log("inside filter: ", nomeData)
     axios.post(`${baseURL2}/tasksfind`, {
         
-        nome: nomeData.name
+        nome: nomeData.name,
+        cargo: nomeData.cargo
       })
       .then(function (response) {
         console.log("inside filter2: ", response.data)
@@ -21,14 +22,15 @@ function postFilterData(nomeData, setGetResponse) {
         console.log(error);
       });
   }
-function createData(formData) {
+function createData(formData, setGetResponse) {
 
     axios.post(`${baseURL2}/tasks`, {
         nome: formData.name,
         cargo: formData.role
       })
       .then(function (response) {
-        console.log(response);
+        setGetResponse([response.data])
+        // console.log(response.data);
       })
       .catch(function (error) {
         console.log(error);

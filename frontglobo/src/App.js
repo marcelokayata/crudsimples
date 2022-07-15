@@ -20,8 +20,8 @@ function App() {
           Learn React
         </a>
       </header>
-      {/* <h1>Create Data</h1>
-      <CrudForm crud="createData"/> */}
+      <h1>Create Data</h1>
+      <CrudForm crud="createData"/>
       <h1>Filter Data</h1>
       <CrudForm crud="postFilterData"/>
       <AxiosExample/>

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-
+import '../Style/Form.css'
 function AxiosExample() {
     const baseURL = "https://jsonplaceholder.typicode.com/posts";
     const baseURL2 = "http://localhost:4000";
@@ -34,10 +34,15 @@ function AxiosExample() {
     <div>
       <h1>{post.title}</h1>
       <p>{post.body}</p>
-
+      
       {dataTask.map( item => (
-        <p key={item._id}>{item.nome}</p>
+        <div className="flex-container">
+        <div key={item._id + "nome"}>{item.nome}</div> 
+        |
+        <div key={item._id + "cargo"}>{item.cargo}</div>
+        </div>
       ))}
+      
       <button onClick={createPost}>Create Post</button>
     </div>
   );

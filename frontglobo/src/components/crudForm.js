@@ -11,6 +11,7 @@ import '../Style/Form.css'
 const CrudForm = (props) => {
     const [inputs, setInputs] = useState({});
     const [getResponse, setGetResponse] = useState({});
+    const [getAllData, setgetAllData] = useState({});
     // const [nameForm, setNameForm] = useState(null);
     // const [roleForm, setRoleForm] = useState(null);
 
@@ -18,6 +19,7 @@ const CrudForm = (props) => {
         //  getResponseDados.current = getResponse
         //  postFilterData(inputs, setGetResponse)
          console.log("postFilterDataUseEffect: ", getResponse)
+         console.log("getResponse cargo: ", getResponse.data)
       }, [getResponse]);
     function handleChange(event)  {
         event.preventDefault();
@@ -33,8 +35,10 @@ const CrudForm = (props) => {
         // alert('A name was submitted: ' + nameForm);
         if(props.crud === "createData"){
             event.preventDefault();
-            createData(inputs)
-            console.log("all: ", inputs)
+            await createData(inputs, setGetResponse)
+            // console.log("all: ", inputs)
+            console.log("getResponse create Data: ", getResponse.data?.cargo)
+            
         }
         if(props.crud === "postFilterData"){
             event.preventDefault();
@@ -48,7 +52,7 @@ const CrudForm = (props) => {
         // event.preventDefault();
       }
 
-
+    //   if (!getResponse) return "Nada!"
     // All the JSX will go inside this return
     return(
         <div>
@@ -79,10 +83,20 @@ const CrudForm = (props) => {
             </form>
 
             <h3>Resultado</h3>
-            {/* {
-            getResponse.map( item => (
-                    <p key={item._id}>{item.name}</p>
-                ))} */}
+            
+            {Array.isArray(getResponse) ? getResponse.map( item => (
+        // <p key={item._id}>{item.nome} </p>
+        <div className="flex-container">
+        <div key={item._id + "nome"}>{item.nome}</div> 
+        |
+        <div key={item._id + "cargo"}>{item.cargo}</div>
+        </div>
+            )): "não é array" }
+        
+        
+        
+        
+                
         </div>
         
     )

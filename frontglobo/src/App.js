@@ -24,6 +24,10 @@ function App() {
       <CrudForm crud="createData"/>
       <h1>Filter Data</h1>
       <CrudForm crud="postFilterData"/>
+      <h1>Get All Data</h1>
+      <CrudForm crud="getAllData"/>
+      <h1>Update Data</h1>
+      <CrudForm crud="updateData"/>
       <AxiosExample/>
     </div>
   );

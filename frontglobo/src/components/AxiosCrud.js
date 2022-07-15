@@ -1,12 +1,26 @@
 import axios from "axios";
 const baseURL2 = "http://localhost:4000";
-function getAllData(setDataTask) {
+function getAllData(setGetResponse) {
     
     axios.get(`${baseURL2}/tasks`).then((response) => {
-        setDataTask(response.data);
+        setGetResponse(response.data);
         console.log("dados: ", response.data)
       });
   }
+function updateData(inputs,setGetResponse){
+  console.log("updateData: ", inputs)
+  axios.put(`${baseURL2}/tasks`,[
+    {
+        "nome": inputs.name
+    },
+    {
+        "nome": inputs.role
+    }  
+  ]).then((response) => {
+    setGetResponse(response.data);
+    console.log("dados: ", response.data)
+  });
+}
 function postFilterData(nomeData, setGetResponse) {
   console.log("inside filter: ", nomeData)
     axios.post(`${baseURL2}/tasksfind`, {
@@ -37,4 +51,4 @@ function createData(formData, setGetResponse) {
       });
   }
   
-export { getAllData, postFilterData, createData };
+export { getAllData, postFilterData, createData, updateData };

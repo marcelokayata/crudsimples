@@ -1,6 +1,6 @@
 // import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import { createData, postFilterData, getAllData, updateData } from './AxiosCrud'
+import { createData, postFilterData, getAllData, updateData, deleteData } from './AxiosCrud'
 
 // import Col from 'react-bootstrap/Col';
 // import Form from 'react-bootstrap/Form';
@@ -53,6 +53,12 @@ const CrudForm = (props) => {
         if(props.crud === "updateData"){
             event.preventDefault();
             await updateData(inputs,setGetResponse)
+            // console.log("postFilterData: ", getResponse)
+            // console.log("getResponseDados: ", getResponseDados)
+        }
+        if(props.crud === "deleteData"){
+            event.preventDefault();
+            await deleteData(inputs,setGetResponse)
             // console.log("postFilterData: ", getResponse)
             // console.log("getResponseDados: ", getResponseDados)
         }

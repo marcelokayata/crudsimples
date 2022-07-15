@@ -50,5 +50,20 @@ function createData(formData, setGetResponse) {
         console.log(error);
       });
   }
+
+  function deleteData(formData, setGetResponse) {
+
+    axios.delete(`${baseURL2}/tasks`, {
+        nome: formData.name,
+        cargo: formData.role
+      })
+      .then(function (response) {
+        setGetResponse([response.data])
+        // console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
   
-export { getAllData, postFilterData, createData, updateData };
+export { getAllData, postFilterData, createData, updateData, deleteData };

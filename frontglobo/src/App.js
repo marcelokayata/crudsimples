@@ -28,6 +28,8 @@ function App() {
       <CrudForm crud="getAllData"/>
       <h1>Update Data</h1>
       <CrudForm crud="updateData"/>
+      <h1>Delete Data</h1>
+      <CrudForm crud="deleteData"/>
       <AxiosExample/>
     </div>
   );

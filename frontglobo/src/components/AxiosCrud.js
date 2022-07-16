@@ -4,7 +4,7 @@ function getAllData(setGetResponse) {
     
     axios.get(`${baseURL2}/tasks`).then((response) => {
         setGetResponse(response.data);
-        console.log("dados: ", response.data)
+        // console.log("dados: ", response.data)
       });
   }
 function updateData(inputs,setGetResponse){

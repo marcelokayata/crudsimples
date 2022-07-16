@@ -9,7 +9,7 @@ const cors = require('cors')
   
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://172.25.16.1:27017/Tododb');
+mongoose.connect('mongodb://172.26.64.1:27017/Tododb');
 //mongodb://AzureDiamond:hunter2@172.25.16.1:27017/Tododb
 // mongodb%3a%2f%2fAzureDiamond%3ahunter2%40172.25.16.1%3a27017%2fTododb
 //Tododb

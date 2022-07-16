@@ -11,14 +11,13 @@ import '../Style/Form.css'
 const CrudForm = (props) => {
     const [inputs, setInputs] = useState({});
     const [getResponse, setGetResponse] = useState({});
-    // const [getAllData, setgetAllData] = useState({});
+    const [getAllDataFrame, setgetAllDataFrame] = useState({});
 
     useEffect(() =>  {
-        //  getResponseDados.current = getResponse
-        //  postFilterData(inputs, setGetResponse)
-         console.log("postFilterDataUseEffect: ", getResponse)
-         console.log("getResponse cargo: ", getResponse.data)
-      }, [getResponse]);
+        //  console.log("postFilterDataUseEffect: ", getResponse)
+        //  console.log("getResponse cargo: ", getResponse.data)
+         getAllData(setgetAllDataFrame)
+      }, [getResponse, getAllDataFrame]);
     function handleChange(event)  {
         event.preventDefault();
           
@@ -101,13 +100,15 @@ const CrudForm = (props) => {
             <h3>Resultado</h3>
             
             {Array.isArray(getResponse) ? getResponse.map( item => (
-        // <p key={item._id}>{item.nome} </p>
         <div className="flex-container">
         <div key={item._id + "nome"}>{item.nome}</div> 
         |
         <div key={item._id + "cargo"}>{item.cargo}</div>
         </div>
             )): "não é array" }
+
+        
+        
         
         
         

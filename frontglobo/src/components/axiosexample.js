@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import '../Style/Form.css'
+import { getAllData } from './AxiosCrud'
 function AxiosExample() {
     const baseURL = "https://jsonplaceholder.typicode.com/posts";
     const baseURL2 = "http://localhost:4000";
@@ -8,14 +9,14 @@ function AxiosExample() {
     const [dataTask, setDataTask] = useState(null);
 
     useEffect(() => {
-      axios.get(`${baseURL}/1`).then((response) => {
-        setPost(response.data);
-      });
-      axios.get(`${baseURL2}/tasks`).then((response) => {
-        setDataTask(response.data);
-        // console.log("dados: ", response.data)
-      });
-    }, []);
+      // axios.get(`${baseURL}/1`).then((response) => {
+      //   setPost(response.data);
+      // });
+      // axios.get(`${baseURL2}/tasks`).then((response) => {
+      //   setDataTask(response.data);
+      // });
+      getAllData(setDataTask)
+    }, [dataTask]);
   
     function createPost() {
       axios
@@ -28,18 +29,18 @@ function AxiosExample() {
         });
     }
   
-    if (!post) return "No post!"
-
+    // if (!post) return "No post!"
+    if (!dataTask) return "No data"
   return (
     <div>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
-      
+      {/* <h1>{post.title}</h1>
+      <p>{post.body}</p> */}
+      <h1>Dado geral</h1>
       {dataTask.map( item => (
         <div className="flex-container">
-        <div key={item._id + "nome"}>{item.nome}</div> 
+        <div key={item._id + "nomeaxios"}>{item.nome}</div> 
         |
-        <div key={item._id + "cargo"}>{item.cargo}</div>
+        <div key={item._id + "cargoaxios"}>{item.cargo}</div>
         </div>
       ))}
       

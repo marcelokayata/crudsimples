@@ -38,9 +38,9 @@ function AxiosExample() {
       <h1>Dado geral</h1>
       {dataTask.map( item => (
         <div className="flex-container">
-        <div key={item._id + "nomeaxios"}>{item.nome}</div> 
+        <div key={item._id + "nomeaxios"}>{item.titulo}</div> 
         |
-        <div key={item._id + "cargoaxios"}>{item.cargo}</div>
+        <div key={item._id + "cargoaxios"}>{item.conteudo}</div>
         </div>
       ))}
       

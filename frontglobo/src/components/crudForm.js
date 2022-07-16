@@ -76,22 +76,22 @@ const CrudForm = (props) => {
                     Name:
                     <input
                     type='text'
-                    name='name'
-                    value={inputs.name || ""}
+                    name='titulo'
+                    value={inputs.titulo || ""}
                     onChange={handleChange}
                     />
                     Cargo:
                     <input
                     type='text'
-                    name='role'
-                    value={inputs.role || ""}
+                    name='conteudo'
+                    value={inputs.conteudo || ""}
                     onChange={handleChange}
                     />
                 </div>
                 <div className="flex-container">
                 
                     <div>Name is: {inputs.name}</div>
-                    <div>Role is: {inputs.role}</div>
+                    <div>Role is: {inputs.conteudo}</div>
                 </div>
                 
                 <input type="submit" value="Submit" />
@@ -101,9 +101,9 @@ const CrudForm = (props) => {
             
             {Array.isArray(getResponse) ? getResponse.map( item => (
         <div className="flex-container">
-        <div key={item._id + "nome"}>{item.nome}</div> 
+        <div key={item._id + "nome"}>{item.titulo}</div> 
         |
-        <div key={item._id + "cargo"}>{item.cargo}</div>
+        <div key={item._id + "cargo"}>{item.conteudo}</div>
         </div>
             )): "não é array" }
 

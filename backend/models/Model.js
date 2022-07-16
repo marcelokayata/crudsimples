@@ -4,15 +4,12 @@ let Schema = mongoose.Schema;
 
 
 let TaskSchema = new Schema({
-  cargo: {
+  titulo: {
     type: String,
   },
-  nome: {
+  conteudo: {
     type: String,
-  },
-  codigo: {
-    type: String,
-  },
+  },  
   Created_date: {
     type: Date,
     default: Date.now

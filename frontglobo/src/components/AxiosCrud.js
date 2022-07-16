@@ -1,20 +1,20 @@
 import axios from "axios";
-const baseURL2 = "http://localhost:4000";
+const baseURL = "http://localhost:4000";
 function getAllData(setGetResponse) {
     
-    axios.get(`${baseURL2}/tasks`).then((response) => {
+    axios.get(`${baseURL}/tasks`).then((response) => {
         setGetResponse(response.data);
         // console.log("dados: ", response.data)
       });
   }
 function updateData(inputs,setGetResponse){
   console.log("updateData: ", inputs)
-  axios.put(`${baseURL2}/tasks`,[
+  axios.put(`${baseURL}/tasks`,[
     {
-        "nome": inputs.name
+        "titulo": inputs.titulo
     },
     {
-        "nome": inputs.role
+        "titulo": inputs.conteudo
     }  
   ]).then((response) => {
     setGetResponse(response.data);
@@ -23,10 +23,10 @@ function updateData(inputs,setGetResponse){
 }
 function postFilterData(nomeData, setGetResponse) {
   console.log("inside filter: ", nomeData)
-    axios.post(`${baseURL2}/tasksfind`, {
+    axios.post(`${baseURL}/tasksfind`, {
         
-        nome: nomeData.name,
-        cargo: nomeData.cargo
+        titulo: nomeData.titulo,
+        conteudo: nomeData.conteudo
       })
       .then(function (response) {
         console.log("inside filter2: ", response.data)
@@ -38,9 +38,9 @@ function postFilterData(nomeData, setGetResponse) {
   }
 function createData(formData, setGetResponse) {
 
-    axios.post(`${baseURL2}/tasks`, {
-        nome: formData.name,
-        cargo: formData.role
+    axios.post(`${baseURL}/tasks`, {
+        titulo: formData.titulo,
+        conteudo: formData.conteudo
       })
       .then(function (response) {
         setGetResponse([response.data])
@@ -53,9 +53,9 @@ function createData(formData, setGetResponse) {
 
   function deleteData(formData, setGetResponse) {
 
-    axios.delete(`${baseURL2}/tasks`, {
-        nome: formData.name,
-        cargo: formData.role
+    axios.delete(`${baseURL}/tasks`, {
+        titulo: formData.titulo,
+        conteudo: formData.conteudo
       })
       .then(function (response) {
         setGetResponse([response.data])

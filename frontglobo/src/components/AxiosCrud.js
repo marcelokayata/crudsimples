@@ -11,10 +11,12 @@ function updateData(inputs,setGetResponse){
   console.log("updateData: ", inputs)
   axios.put(`${baseURL}/tasks`,[
     {
-        "titulo": inputs.titulo
+        "titulo": inputs.titulo1,
+        "conteudo": inputs.conteudo1
     },
     {
-        "titulo": inputs.conteudo
+        "titulo": inputs.conteudo2,
+        "conteudo": inputs.conteudo2
     }  
   ]).then((response) => {
     setGetResponse(response.data);
@@ -52,7 +54,8 @@ function createData(formData, setGetResponse) {
   }
 
   function deleteData(formData, setGetResponse) {
-
+    console.log("delete: ", formData)
+    console.log("titulo: ", formData.titulo)
     axios.delete(`${baseURL}/tasks`, {
         titulo: formData.titulo,
         conteudo: formData.conteudo

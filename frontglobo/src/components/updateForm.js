@@ -8,7 +8,7 @@ import { createData, postFilterData, getAllData, updateData, deleteData } from '
 // import Button from 'react-bootstrap/Button';
 import '../Style/Form.css'
 //https://www.reactjstutorials.com/react-advanced/20/react-use-callback
-const CrudForm = (props) => {
+const UpdateForm = (props) => {
     const [inputs, setInputs] = useState({});
     const [getResponse, setGetResponse] = useState({});
     const [getAllDataFrame, setgetAllDataFrame] = useState({});
@@ -73,25 +73,43 @@ const CrudForm = (props) => {
         <div>
             <form onSubmit={handleSubmit}>
                 <div className='vertical'>
+                    <h4>Pesquisar</h4>
                     <p>Título:</p>
                     <input
                     type='text'
-                    name='titulo'
-                    value={inputs.titulo || ""}
+                    name='titulo1'
+                    value={inputs.titulo1 || ""}
                     onChange={handleChange}
                     />
                     <p>Conteúdo:</p>
                     <textarea
                     type='text'
-                    name='conteudo'
-                    value={inputs.conteudo || ""}
+                    name='conteudo1'
+                    value={inputs.conteudo1 || ""}
+                    onChange={handleChange}
+                    />
+                </div>
+                <div className='vertical'>
+                    <h4>Alterar</h4>
+                    <p>Título2:</p>
+                    <input
+                    type='text'
+                    name='titulo2'
+                    value={inputs.titulo2 || ""}
+                    onChange={handleChange}
+                    />
+                    <p>Conteúdo2:</p>
+                    <textarea
+                    type='text'
+                    name='conteudo2'
+                    value={inputs.conteudo2 || ""}
                     onChange={handleChange}
                     />
                 </div>
                 <div >
                 
-                    <div>Título: {inputs.titulo}</div>
-                    <div>Conteúdo: {inputs.conteudo}</div>
+                    <div>Título1: {inputs.titulo1}</div>
+                    <div>Conteúdo1: {inputs.conteudo1}</div>
                 </div>
                 
                 <input type="submit" value="Submit" />
@@ -101,9 +119,9 @@ const CrudForm = (props) => {
             
             {Array.isArray(getResponse) ? getResponse.map( item => (
         <div className="border-materia">
-        <div key={item._id + "nome"}>{item.titulo}</div> 
+        <div key={item._id + "nome"}>{item.titulo1}</div> 
         |
-        <div key={item._id + "cargo"}>{item.conteudo}</div>
+        <div key={item._id + "cargo"}>{item.conteudo1}</div>
         </div>
             )): "não é array" }
 
@@ -119,4 +137,4 @@ const CrudForm = (props) => {
     )
 }
 
-export default CrudForm
+export default UpdateForm

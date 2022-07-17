@@ -3,6 +3,14 @@ import './App.css';
 import AxiosExample from './components/axiosexample';
 import CrudForm from './components/crudForm';
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import NoPage from "./pages/NoPage";
+import CreateDataPage from "./pages/CreateDataPage";
+import DeletePage from "./pages/DeletePage";
+import UpdatePage from "./pages/UpdatePage";
+
 function App() {
   return (
     <div className="App">
@@ -20,7 +28,20 @@ function App() {
           Learn React
         </a>
       </header>
-      <h1>Create Data</h1>
+      
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/createdata" element={<CreateDataPage />} />   
+          <Route path="/delete" element={<DeletePage />} />
+          <Route path="/update" element={<UpdatePage />} />        
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+
+      {/* <h1>Create Data</h1>
       <CrudForm crud="createData"/>
       <h1>Filter Data</h1>
       <CrudForm crud="postFilterData"/>
@@ -30,7 +51,7 @@ function App() {
       <CrudForm crud="updateData"/>
       <h1>Delete Data</h1>
       <CrudForm crud="deleteData"/>
-      <AxiosExample/>
+      <AxiosExample/> */}
     </div>
   );
 }

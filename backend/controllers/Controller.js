@@ -53,7 +53,7 @@ exports.find = (req, res) => {
 exports.delete = function(req, res) {
 
 
-  Task.remove(
+  Task.deleteOne(
     req.body
   , function(err, query) {
     if (err)

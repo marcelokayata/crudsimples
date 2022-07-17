@@ -37,10 +37,13 @@ function AxiosExample() {
       <p>{post.body}</p> */}
       <h1>Dado geral</h1>
       {dataTask.map( item => (
-        <div className="flex-container">
+        
+        <div className="border-materia" >
+          {/* {item.Created_date.toISOString().substring(0, 10)} */}
         <div key={item._id + "nomeaxios"}>{item.titulo}</div> 
-        |
+        <br/>
         <div key={item._id + "cargoaxios"}>{item.conteudo}</div>
+        <div key={item._id + "dataaxios"}>{item.Created_date.substring(0, 10) }</div>
         </div>
       ))}
       

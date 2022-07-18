@@ -1,3 +1,5 @@
+## Baixar imagem mongoDB
+docker pull mongo
 
 ## Em /backend
 

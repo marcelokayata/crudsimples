@@ -4,7 +4,6 @@ function getAllData(setGetResponse) {
     
     axios.get(`${baseURL}/tasks`).then((response) => {
         setGetResponse(response.data);
-        // console.log("dados: ", response.data)
       });
   }
 function updateData(inputs,setGetResponse){
@@ -46,7 +45,6 @@ function createData(formData, setGetResponse) {
       })
       .then(function (response) {
         setGetResponse([response.data])
-        // console.log(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -62,7 +60,6 @@ function createData(formData, setGetResponse) {
       })
       .then(function (response) {
         setGetResponse([response.data])
-        // console.log(response.data);
       })
       .catch(function (error) {
         console.log(error);

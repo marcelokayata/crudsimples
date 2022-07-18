@@ -9,12 +9,6 @@ function AxiosExample() {
     const [dataTask, setDataTask] = useState(null);
 
     useEffect(() => {
-      // axios.get(`${baseURL}/1`).then((response) => {
-      //   setPost(response.data);
-      // });
-      // axios.get(`${baseURL2}/tasks`).then((response) => {
-      //   setDataTask(response.data);
-      // });
       getAllData(setDataTask)
     }, [dataTask]);
   
@@ -29,21 +23,17 @@ function AxiosExample() {
         });
     }
   
-    // if (!post) return "No post!"
     if (!dataTask) return "No data"
   return (
     <div>
-      {/* <h1>{post.title}</h1>
-      <p>{post.body}</p> */}
       <h1>Dado geral</h1>
       {dataTask.map( item => (
         
         <div className="border-materia" >
-          {/* {item.Created_date.toISOString().substring(0, 10)} */}
-        <div key={item._id + "nomeaxios"}>{item.titulo}</div> 
-        <br/>
-        <div key={item._id + "cargoaxios"}>{item.conteudo}</div>
-        <div key={item._id + "dataaxios"}>{item.Created_date.substring(0, 10) }</div>
+          <div key={item._id + "nomeaxios"}>{item.titulo}</div> 
+          <br/>
+          <div key={item._id + "cargoaxios"}>{item.conteudo}</div>
+          <div key={item._id + "dataaxios"}>{item.Created_date.substring(0, 10) }</div>
         </div>
       ))}
       

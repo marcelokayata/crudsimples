@@ -1,13 +1,8 @@
 // import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import { createData, postFilterData, getAllData, updateData, deleteData } from './AxiosCrud'
-
-// import Col from 'react-bootstrap/Col';
-// import Form from 'react-bootstrap/Form';
-// import Row from 'react-bootstrap/Row';
-// import Button from 'react-bootstrap/Button';
+import { getAllData, updateData } from './AxiosCrud'
 import '../Style/Form.css'
-//https://www.reactjstutorials.com/react-advanced/20/react-use-callback
+
 const UpdateForm = (props) => {
     const [inputs, setInputs] = useState({});
     const [getResponse, setGetResponse] = useState({});
@@ -15,8 +10,6 @@ const UpdateForm = (props) => {
     const [getWarnUpdate, setWarnUpdate] = useState("Não atualizado");
 
     useEffect(() =>  {
-        //  console.log("postFilterDataUseEffect: ", getResponse)
-        //  console.log("getResponse cargo: ", getResponse.data)
          getAllData(setgetAllDataFrame)
       }, [getResponse, getAllDataFrame]);
     function handleChange(event)  {

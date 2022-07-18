@@ -1,0 +1,17 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+  }
+  .vertical {
+    vertical-align: baseline;
+  }
+  .border-materia {
+    border-style: solid;
+    width: 50%;
+    margin: auto;
+    border-radius: 50px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+ }

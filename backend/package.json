@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Este teste visa avaliar os conhecimentos e habilidades na nossa stack de tecnologias necessários para aplicação a oportunidade de desenvolvedor full stack aqui na [Sofit](https://sofit4.com.br).",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SofitSoftware/fullstackchallenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SofitSoftware/fullstackchallenge/issues"
+  },
+  "homepage": "https://github.com/SofitSoftware/fullstackchallenge#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jest": "^28.1.2",
+    "mongodb-memory-server": "^8.7.2",
+    "mongoose": "^6.4.3",
+    "nodemon": "^2.0.19"
+  },
+  "devDependencies": {
+    "@shelf/jest-mongodb": "^3.0.2"
+  }
+}

@@ -10,7 +10,7 @@ services:
     image: apibase:1.0
     container_name: apibase-container
     environment: 
-      - MONGODB_CONNSTRING=mongodb://172.26.64.1:27017/Tododb
+      - MONGODB_CONNSTRING=mongodb://192.168.56.1:27017/Tododb
     ports:
       - 4000:4000
   front-react:

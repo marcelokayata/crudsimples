@@ -1,9 +1,9 @@
 import { Outlet, Link } from "react-router-dom";
-
+import '../Style/Form.css'
 const Layout = () => {
   return (
     <>
-      <nav>
+      <nav className="flex-container">
         <ul>
           <li>
             <Link to="/">Home</Link>

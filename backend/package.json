@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "jest --testEnvironment=node --runInBand --detectOpenHandles ./tests"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,8 @@
     "mongodb-memory-server": "^8.7.2",
     "mongoose": "^6.4.3",
     "nodemon": "^2.0.19"
+  },
+  "devDependencies": {
+    "@shelf/jest-mongodb": "^3.0.2"
   }
 }

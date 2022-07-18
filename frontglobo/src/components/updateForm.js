@@ -12,6 +12,7 @@ const UpdateForm = (props) => {
     const [inputs, setInputs] = useState({});
     const [getResponse, setGetResponse] = useState({});
     const [getAllDataFrame, setgetAllDataFrame] = useState({});
+    const [getWarnUpdate, setWarnUpdate] = useState("Não atualizado");
 
     useEffect(() =>  {
         //  console.log("postFilterDataUseEffect: ", getResponse)
@@ -26,49 +27,16 @@ const UpdateForm = (props) => {
         const name = event.target.name;
         const value = event.target.value;
         setInputs(values => ({...values, [name]: value}))
+        setWarnUpdate("Não atualizado")
       };
     
       async function handleSubmit(event)  {
-        // alert('A name was submitted: ' + nameForm);
-        if(props.crud === "createData"){
-            event.preventDefault();
-            await createData(inputs, setGetResponse)
-            // console.log("all: ", inputs)
-            console.log("getResponse create Data: ", getResponse.data?.cargo)
-            
-        }
-        if(props.crud === "postFilterData"){
-            event.preventDefault();
-            await postFilterData(inputs,setGetResponse)
-            // console.log("postFilterData: ", getResponse)
-            // console.log("getResponseDados: ", getResponseDados)
-        }
-        if(props.crud === "getAllData"){
-            event.preventDefault();
-            await getAllData(setGetResponse)
-            // console.log("postFilterData: ", getResponse)
-            // console.log("getResponseDados: ", getResponseDados)
-        }
         if(props.crud === "updateData"){
             event.preventDefault();
             await updateData(inputs,setGetResponse)
-            // console.log("postFilterData: ", getResponse)
-            // console.log("getResponseDados: ", getResponseDados)
+            setWarnUpdate("Atualizado")
         }
-        if(props.crud === "deleteData"){
-            event.preventDefault();
-            await deleteData(inputs,setGetResponse)
-            // console.log("postFilterData: ", getResponse)
-            // console.log("getResponseDados: ", getResponseDados)
-        }
-        // createData(inputs)
-        // console.log("inputs: ",inputs);
-        
-        // event.preventDefault();
       }
-
-    //   if (!getResponse) return "Nada!"
-    // All the JSX will go inside this return
     return(
         <div>
             <form onSubmit={handleSubmit}>
@@ -112,26 +80,16 @@ const UpdateForm = (props) => {
                     <div>Conteúdo1: {inputs.conteudo1}</div>
                 </div>
                 
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit"  />
             </form>
 
             <h3>Resultado</h3>
             
-            {Array.isArray(getResponse) ? getResponse.map( item => (
-        <div className="border-materia">
-        <div key={item._id + "nome"}>{item.titulo1}</div> 
-        |
-        <div key={item._id + "cargo"}>{item.conteudo1}</div>
-        </div>
-            )): "não é array" }
-
-        
-        
-        
-        
-        
-        
-                
+            {Array.isArray(getAllDataFrame) ? 
+            <div className="border-materia">
+                <div >{getWarnUpdate}</div>
+            </div>
+            : "Sem dados" }
         </div>
         
     )

@@ -15,7 +15,7 @@ function updateData(inputs,setGetResponse){
         "conteudo": inputs.conteudo1
     },
     {
-        "titulo": inputs.conteudo2,
+        "titulo": inputs.titulo2,
         "conteudo": inputs.conteudo2
     }  
   ]).then((response) => {

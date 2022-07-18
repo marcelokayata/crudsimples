@@ -9,4 +9,9 @@
     border-style: solid;
     width: 50%;
     margin: auto;
+    border-radius: 50px;
   }
+  ul {
+    list-style-type: none;
+    padding: 0;
+ }

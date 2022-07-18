@@ -101,11 +101,11 @@ const CrudForm = (props) => {
             
             {Array.isArray(getResponse) ? getResponse.map( item => (
         <div className="border-materia">
-        <div key={item._id + "nome"}>{item.titulo}</div> 
+        <div key={item._id + "nome"}>Título: {item.titulo}</div> 
         |
-        <div key={item._id + "cargo"}>{item.conteudo}</div>
+        <div key={item._id + "cargo"}>Conteúdo: {item.conteudo}</div>
         </div>
-            )): "não é array" }
+            )): "Sem dados" }
 
         
         

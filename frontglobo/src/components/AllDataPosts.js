@@ -16,10 +16,10 @@ function AllDataPosts() {
       {dataTask.map( item => (
         
         <div className="border-materia" >
-            <div key={item._id + "nomeaxios"}>{item.titulo}</div> 
+            <div key={item._id + "nomeaxios"}> Título: {item.titulo}</div> 
             <br/>
-            <div key={item._id + "cargoaxios"}>{item.conteudo}</div>
-            <div key={item._id + "dataaxios"}>{item.Created_date.substring(0, 10) }</div>
+            <div key={item._id + "cargoaxios"}>Conteúdo: {item.conteudo}</div>
+            <div key={item._id + "dataaxios"}>Data: {item.Created_date.substring(0, 10) }</div>
         </div>
       ))}
       
